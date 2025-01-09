@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import {ThemeProvider, ThemeContext } from './context/ThemeContext'
+import './theme.css'
+//import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+//import Home from './Home';
 
 function App() {
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={theme}>
+      <h1>Current Theme: {theme}</h1>
+      <button onClick={toggleTheme}>Toggle Theme</button>
     </div>
   );
 }
 
-export default App;
+function Wrapper() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+
+  )
+}
+
+export default Wrapper;
