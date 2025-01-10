@@ -24,6 +24,11 @@ function Form() {
             <input
                 name="name"
                 value={formData.name}
+                onchange={handleInputChange}
+                placeholder="name"
+            />
+            <input 
+                name="email"
             />
         </form>
     )
