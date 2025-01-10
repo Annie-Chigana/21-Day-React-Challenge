@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import {ThemeProvider, ThemeContext } from './context/ThemeContext'
 import './theme.css'
+import Form from './optimization/form';
 //import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 //import Home from './Home';
 
